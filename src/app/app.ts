@@ -8,9 +8,7 @@ import { Home } from './home/home';
   imports: [RouterModule, Navbar, Home],
   template: `
    <main>
-      <header>
-        <app-navbar></app-navbar>
-      </header>
+      <app-navbar></app-navbar>
       <section class="content">
         <app-home ></app-home>
       </section>

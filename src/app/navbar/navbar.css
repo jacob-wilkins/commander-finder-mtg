@@ -1,0 +1,56 @@
+.navbar {
+    display: flex;
+    align-items: center; /* vertically center children inside the navbar */
+    justify-content: space-between; /* space between logo, navigation, and user */
+    background-color: #936639;
+    color: white;
+    padding: 8px 12px;
+}
+
+/* reset and horizontal nav layout */
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.navigation li {
+    padding: 8px 6px;
+}
+
+.logo {
+    height: 50px;
+    width: 120px; /* fixed visual width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* make the user container a flexbox so its children (forms/buttons) can be centered */
+.user {
+    display: flex;
+    align-items: center; /* vertical centering of buttons */
+    justify-content: center; /* horizontal centering inside the user area */
+    gap: 8px;
+    min-width: 160px; /* keeps some space for the buttons */
+}
+
+.signIn, .register {
+    margin: 0; /* forms inside nav should not add default margins */
+}
+
+.signInButton, .registerButton {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+}
+
+.signInButton:hover, .registerButton:hover {
+    background: rgba(255,255,255,0.22);
+}
