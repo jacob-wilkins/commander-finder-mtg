@@ -1,0 +1,30 @@
+<p>home works!</p>
+
+<form (submit)="search(nameInput.value); $event.preventDefault();">
+    <label for="card-name">Search for Card:</label>
+    <input #nameInput type="text" id="card-name" name="card-name">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Card details fetched from Scry -->
+<div *ngIf="loading">Loading card...</div>
+
+<div *ngIf="error" class="error">Error: {{ error }}</div>
+
+<div *ngIf="card">
+    <div *ngIf="imageUrl" class="card-image">
+        <img [src]="imageUrl" [alt]="card.name + ' image'" />
+    </div>
+    <h2>{{ card.name }}</h2>
+    <p><strong>Set:</strong> {{ card.set }}</p>
+    <p *ngIf="card.type_line"><strong>Type:</strong> {{ card.type_line }}</p>
+    <p *ngIf="card.oracle_text"><strong>Oracle:</strong> {{ card.oracle_text }}</p>
+
+    <h3>Printings ({{ prints.length }})</h3>
+    <ul>
+        <li *ngFor="let p of prints">
+            {{ p.set_name }} — {{ p.collector_number }}
+        </li>
+    </ul>
+
+</div>
